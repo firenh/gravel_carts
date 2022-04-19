@@ -9,11 +9,11 @@
     "FireNH"
   ],
   "contact": {
-    "homepage": "https://github.com/FireNH",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://modrinth.com/mod/gravel_carts",
+    "sources": "https://github.com/firenh/gravel_carts"
   },
 
-  "license": "CC0-1.0",
+  "license": "LGPL-3.0",
   "icon": "assets/gravel_carts/icon.png",
 
   "environment": "*",
