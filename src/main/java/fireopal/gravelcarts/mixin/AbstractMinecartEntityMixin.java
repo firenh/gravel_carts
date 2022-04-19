@@ -34,15 +34,17 @@ public class AbstractMinecartEntityMixin {
 		int down = 2;
 		boolean cappedLayers = GravelCarts.config.maxGravelLayers >= 0;
 
-		while (
-			((AbstractMinecartEntity)(Object)this).world.getBlockState(
-				((AbstractMinecartEntity)(Object)this).getBlockPos().down(down)
-			).isIn(GravelCarts.MINECART_SPEED_INCREASE_UNDER_TWO)
-		) {
-			multiplier *= 1 + (.25 / Math.pow(down - 1, GravelCarts.layerPowInDivisor()));
-			down += 1;
+		if (GravelCarts.config.maxGravelLayers != 0) {
+			while (
+				((AbstractMinecartEntity)(Object)this).world.getBlockState(
+					((AbstractMinecartEntity)(Object)this).getBlockPos().down(down)
+				).isIn(GravelCarts.MINECART_SPEED_INCREASE_UNDER_TWO)
+			) {
+				multiplier *= 1 + (.25 / Math.pow(down - 1, GravelCarts.layerPowInDivisor()));
+				down += 1;
 
-			if (cappedLayers && down > GravelCarts.config.maxGravelLayers) break;
+				if (cappedLayers && down > GravelCarts.config.maxGravelLayers) break;
+			}
 		}
 
 		lastMaxSpeedMultiplier = multiplier;
