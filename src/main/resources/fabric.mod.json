@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "gravel_carts",
+  "version": "${version}",
+
+  "name": "Gravel Carts",
+  "description": "Minecarts travel wayyy faster on rails on gravel.",
+  "authors": [
+    "FireNH"
+  ],
+  "contact": {
+    "homepage": "https://github.com/FireNH",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/gravel_carts/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "fireopal.gravelcarts.GravelCarts"
+    ]
+  },
+  "mixins": [
+    "gravel_carts.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
